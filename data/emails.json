@@ -173,5 +173,19 @@
     "date": "2024-03-19T11:45:33+00:00",
     "subject": "FLASH SALE: Office Furniture Warehouse Clearance - Up to 80% OFF Everything!",
     "email_content": "\ud83c\udfe2 MASSIVE WAREHOUSE CLEARANCE EVENT! \ud83c\udfe2\n\nEverything Must Go - Up to 80% OFF All Office Furniture!\n\nDear Business Owner,\n\nWe're closing our Sydney warehouse and need to clear ALL inventory immediately!\n\n\ud83e\ude91 Executive Chairs - Was $899 \u2192 NOW $179\n\ud83d\udda5\ufe0f Standing Desks - Was $1,299 \u2192 NOW $259\n\ud83d\udcc1 Filing Cabinets - Was $449 \u2192 NOW $89\n\ud83d\udda8\ufe0f Printer Stands - Was $199 \u2192 NOW $39\n\ud83d\udcca Conference Tables - Was $2,499 \u2192 NOW $499\n\nPLUS:\n\u2705 FREE delivery within 50km of Sydney\n\u2705 12-month warranty on all items\n\u2705 Same-day pickup available\n\u2705 Bulk discounts for orders over $5,000\n\n\u23f0 SALE ENDS SUNDAY MIDNIGHT \u23f0\n\nStock is limited and selling FAST! Don't miss out on these incredible savings!\n\nSHOP NOW: www.officegear.net.au/warehouse-clearance\nCALL NOW: 1300-OFFICE (1300-633-423)\n\nHurry - when it's gone, it's GONE!\n\n---\nOffice Gear Australia\n\ud83d\udccd Unit 7, 45 Industrial Drive, Sydney NSW 2000\n\ud83d\udcde Phone: 1300-633-423\n\u2709\ufe0f Email: sales@officegear.net.au\n\nUnsubscribe: www.officegear.net.au/unsubscribe"
+  },
+  {
+    "id": "5ee6594f-503c-4080-8f41-9700ddf210dc",
+    "sender": "test@example.com",
+    "date": "2025-06-21T09:57:03.128921",
+    "subject": "Test Subject",
+    "email_content": "Test email content"
+  },
+  {
+    "id": "93677a78-7550-4b4c-82f8-c87165011090",
+    "sender": "test@example.com",
+    "date": "2025-06-21T09:57:19.304199",
+    "subject": "Test Subject",
+    "email_content": "Test email content"
   }
 ]
