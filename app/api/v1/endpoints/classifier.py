@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 import httpx
+import re
 
 router = APIRouter()
 
@@ -8,16 +9,37 @@ class EmailInput(BaseModel):
     email_content: str
     username: str
 
+
+def extract_most_recent_message(email_body: str) -> str:
+    # known chain patterns first
+    separators = [
+        r"\n-{2,}Original Message-{2,}",
+        r"\nOn .*wrote:",
+        r"\n>?\s*From:\s"
+    ]
+    
+    for pattern in separators:
+        match = re.search(pattern, email_body)
+        if match:
+            return email_body[:match.start()].strip()
+
+    return email_body.strip()
+
+
+
 @router.post("/classify-email")
 async def classify_email(input_data: EmailInput):
     url = "https://candidate-ds-endpoint.onrender.com/get-category"
+
+    trimmed_content = extract_most_recent_message(input_data.email_content)
+
     payload = {
         "username": input_data.username,
-        "email_content": input_data.email_content
+        "email_content": trimmed_content
     }
 
-    # Extend timeout to 30 seconds to accommodate slow ML endpoint
-    timeout = httpx.Timeout(30.0)  
+    # Extend timeout to 60 seconds to accommodate slow ML endpoint
+    timeout = httpx.Timeout(60.0)  
 
     async with httpx.AsyncClient(timeout=timeout) as client:
         try:

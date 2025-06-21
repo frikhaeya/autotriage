@@ -187,5 +187,12 @@
     "date": "2025-06-21T09:57:19.304199",
     "subject": "Test Subject",
     "email_content": "Test email content"
+  },
+  {
+    "id": "70c267be-8b41-4a42-a875-476653e46311",
+    "sender": "test@example.com",
+    "date": "2025-06-21T11:31:43.666207",
+    "subject": "Test Subject",
+    "email_content": "Test email content"
   }
 ]
