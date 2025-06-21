@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-import httpx 
+import httpx
 
 router = APIRouter()
 
@@ -16,10 +16,16 @@ async def classify_email(input_data: EmailInput):
         "email_content": input_data.email_content
     }
 
-    async with httpx.AsyncClient() as client:
+    # Extend timeout to 30 seconds to accommodate slow ML endpoint
+    timeout = httpx.Timeout(30.0)  
+
+    async with httpx.AsyncClient(timeout=timeout) as client:
         try:
             response = await client.post(url, json=payload)
             response.raise_for_status()
-            return {"category": response.json().get("category")}
+            result = response.json()
+            return {"category": result.get("category", "No category returned")}
         except httpx.HTTPError as e:
-            return {"error": str(e)}
+            return {"error": f"HTTP error: {str(e)}"}
+        except Exception as e:
+            return {"error": f"Unexpected error: {str(e)}"}
